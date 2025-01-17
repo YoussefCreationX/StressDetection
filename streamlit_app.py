@@ -33,29 +33,32 @@ with st.sidebar:
   # Machine learning training 
   # Upload the model 
   model = joblib.load('tree.joblib')
-
-  def predict(data:dict):
-      # Extract feature values from the input dictionary
-      features = list(data.values())
+  data = {"features":[acc_x,acc_y,acc_z,BVP,EDA,TEMP,HR,IBI_intervals]}
+def predict(data:dict):
+# Extract feature values from the input dictionary
+  features = list(data.values())
         
-      # Convert the input data to a 2D NumPy array
-      features = np.array(features).reshape(1, -1)
+# Convert the input data to a 2D NumPy array
+  features = np.array(features).reshape(1, -1)
         
-      # Make a prediction
-      prediction = model.predict(features)
+# Make a prediction
+  prediction = model.predict(features)
         
-      # Interpret the prediction
-      if prediction[0] == 1:
-         message = "You are Safe"
-      elif prediction[0] == 0:
-           message = "You are stressed but with a lower rate!"
-      else:
-          message = "You are under high danger! If you need help, tell me!"
-        
-        # Return the result as a dictionary
-      return {'Danger type is': message}
-   data = {"features":[acc_x,acc_y,acc_z,BVP,EDA,TEMP,HR,IBI_intervals]}
-  prediction = predict(data)
+# Interpret the prediction
+  if prediction[0] == 1:
+      message = "You are Safe"
+  elif prediction[0] == 0:
+      message = "You are stressed but with a lower rate!"
+  else:
+      message = "You are under high danger! If you need help, tell me!"
+ # Return the result as a dictionary
+  return {'Danger type is': message}
+  
+# Display predicted species 
+st.subheader('Predicted Species')
+prediction = predict(data)
+prediction
+   
   
 
 
