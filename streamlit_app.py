@@ -56,7 +56,7 @@ def predict(data:dict):
   return {'Danger type is': message}
   
 # Display predicted species 
-st.subheader('Predicted Species')
+st.subheader('Stress Prediction')
 prediction = predict(data)
 st.success(prediction)
 """
