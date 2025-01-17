@@ -16,4 +16,4 @@ with st.expander('Physiological dataset used from a smartwatch'):
   y = df.danger_level
   y
 with st.expander('Data visualizationj'):
-   st.scatter_chart(data=df, x='EDA',y='TEMP',color='species')
+   st.scatter_chart(data=df, x='EDA',y='TEMP',color='danger_level')
