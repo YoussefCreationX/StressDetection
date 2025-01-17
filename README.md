@@ -1,13 +1,13 @@
-# 📦 Streamlit App Starter Kit 
+#  Welcome to this Stress Detection APP using physiology data 
 ```
-⬆️ (Replace above with your app's name)
+⬆️ Stress Detection 
 ```
 
-Description of the app ...
+This is a stress detection app that used machine learning model with physiological data
 
 ## Demo App
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://app-starter-kit.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://StressDetection.streamlit.app/)
 
 ## GitHub Codespaces
 
