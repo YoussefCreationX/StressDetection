@@ -58,8 +58,12 @@ def predict(data:dict):
 # Display predicted species 
 st.subheader('Predicted Species')
 prediction = predict(data)
-st.success(prediction.values())
-prediction
+st.success(prediction)
+"""
+input_df = pd.DataFrame(data,index=[0])
+input_df["danger_level"]
+updateDataSet = pd.concat([input_df,df],axis=0)
+"""
    
   
 
