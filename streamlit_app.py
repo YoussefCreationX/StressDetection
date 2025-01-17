@@ -17,3 +17,6 @@ with st.expander('Physiological dataset used from a smartwatch'):
   y
 with st.expander('Data visualizationj'):
    st.scatter_chart(data=df, x='EDA',y='TEMP',color='danger_level')
+# Data Preparations 
+with st.sidebar: 
+  st.header('Input features')
