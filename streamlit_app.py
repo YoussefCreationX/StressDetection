@@ -58,7 +58,7 @@ def predict(data:dict):
 # Display predicted species 
 st.subheader('Predicted Species')
 prediction = predict(data)
-st.success(prediction)
+st.success(prediction.values())
 prediction
    
   
