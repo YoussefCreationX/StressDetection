@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd 
+import joblib
 st.title('Stress Detection APP')
 st.info('This is a stress detection app based on physiological data and machine learning model')
 
@@ -29,3 +30,32 @@ with st.sidebar:
   TEMP = st.slider('TEMP (c°)',15,40)
   HR = st.slider('HR ()',70,120)
   IBI_intervals = st.slider('IBI_intervals ()',0,1)
+  # Machine learning training 
+  # Upload the model 
+  model = joblib.load('tree.joblib')
+
+  def predict(data:dict):
+      # Extract feature values from the input dictionary
+      features = list(data.values())
+        
+      # Convert the input data to a 2D NumPy array
+      features = np.array(features).reshape(1, -1)
+        
+      # Make a prediction
+      prediction = model.predict(features)
+        
+      # Interpret the prediction
+      if prediction[0] == 1:
+         message = "You are Safe"
+      elif prediction[0] == 0:
+           message = "You are stressed but with a lower rate!"
+      else:
+          message = "You are under high danger! If you need help, tell me!"
+        
+        # Return the result as a dictionary
+      return {'Danger type is': message}
+   data = {"features":[acc_x,acc_y,acc_z,BVP,EDA,TEMP,HR,IBI_intervals]}
+  prediction = predict(data)
+  
+
+
