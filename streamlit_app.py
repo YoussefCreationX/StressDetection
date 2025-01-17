@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd 
 import joblib
+import numpy as np 
 st.title('Stress Detection APP')
 st.info('This is a stress detection app based on physiological data and machine learning model')
 
