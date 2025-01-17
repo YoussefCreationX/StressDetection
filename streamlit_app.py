@@ -8,10 +8,12 @@ with st.expander('Physiological dataset used from a smartwatch'):
   df = pd.read_csv('LeftDataSetA2Fin.csv')
   df
 
-st.write('**X**')
-X = df.drop('danger_level',axis=1)
-X 
+  st.write('**X**')
+  X = df.drop('danger_level',axis=1)
+  X 
 
-st.write('**y**')
-y = df.danger_level
-y
+  st.write('**y**')
+  y = df.danger_level
+  y
+with st.expander('Data visualizationj'):
+   st.scatter_chart(data=df, x='EDA',y='TEMP',color='species')
