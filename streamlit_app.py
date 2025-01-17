@@ -20,3 +20,4 @@ with st.expander('Data visualizationj'):
 # Data Preparations 
 with st.sidebar: 
   st.header('Input features')
+  acc_x = st.slider('acc_x (m/s²)',-35,30)
