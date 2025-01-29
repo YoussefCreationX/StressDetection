@@ -33,7 +33,7 @@ with st.sidebar:
   IBI_intervals = st.slider('IBI_intervals ()',0,1)
   # Machine learning training 
   # Upload the model 
-  model = joblib.load('tree.joblib')
+  model = joblib.load('tree2.joblib')
   data = {"features":[acc_x,acc_y,acc_z,BVP,EDA,TEMP,HR,IBI_intervals]}
 def predict(data:dict):
 # Extract feature values from the input dictionary
